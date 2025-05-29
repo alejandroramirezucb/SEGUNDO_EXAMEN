@@ -1,0 +1,32 @@
+<div class="contenedor-ideas">
+  <button (click)="agregarIdea()" class="boton-agregar">Agregar Idea</button>
+
+  @if (ideas.length === 0) {
+    <div class="mensaje-no-ideas">
+      Aun no has agregado ideas
+    </div>
+  } @else {
+    <table class="tabla-ideas">
+      <thead>
+      <tr>
+        <th>Título</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (idea of ideas; track idea.id) {
+          <tr>
+            <td>{{ idea.titulo }}</td>
+            <td>{{ idea.estado }}</td>
+            <td>
+              <button (click)="editarIdea(idea.id)" class="boton-editar">Actualizar</button>
+              <button (click)="eliminarIdea(idea.id)" class="boton-eliminar">Eliminar</button>
+              <button (click)="verIdea(idea.id)" class="boton-ver">Ver</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

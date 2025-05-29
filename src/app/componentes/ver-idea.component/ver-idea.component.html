@@ -1,0 +1,14 @@
+@if (idea) {
+  <div>
+    <h2>{{ idea.titulo }}</h2>
+    <p><strong>Descripción:</strong> {{ idea.descripcion }}</p>
+    <p><strong>Categoría:</strong> {{ idea.categoria }}</p>
+    <p><strong>Estado:</strong> {{ idea.estado }}</p>
+    <button (click)="volver()">Volver</button>
+  </div>
+} @else {
+  <div>
+    <p>Idea no encontrada.</p>
+    <button (click)="volver()">Volver</button>
+  </div>
+}
